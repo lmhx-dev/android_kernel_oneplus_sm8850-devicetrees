@@ -21,6 +21,12 @@ CANOE_BOARDS += macan-24855-alor-overlay.dtbo \
 	fairlady-25871-canoe-overlay.dtbo \
 	fairlady-25871-canoe-overlay-evb3.dtbo
 
+# realme GT8 Pro (lafa, project 24624 / 24776).
+# Unlike the other projects above, lafa ships a single overlay that covers the
+# whole oplus,hw-id range (EVB1..PVT1); the stock ROM splits the same content
+# across two dtbo entries instead. See oplus/platform_map.bzl.
+CANOE_BOARDS += lafa-24624-canoe-overlay.dtbo
+
 dtb-y += $(CANOE_BASE_DTB) $(CANOE_APQ_BASE_DTB) $(CANOE_BOARDS)
 
 always-y        := $(dtb-y)

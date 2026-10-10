@@ -37,6 +37,17 @@ _platform_map = {
             {"name": "fairlady-25821-canoe-overlay-evb3.dtbo"},
             {"name": "fairlady-25871-canoe-overlay.dtbo"},
             {"name": "fairlady-25871-canoe-overlay-evb3.dtbo"},
+            # Appended last so the indices of the entries above (tuned against the
+            # real OEM dtbo for those devices) stay untouched.
+            #
+            # lafa is matched by oplus,project-id = <24624 24776>, which no other
+            # entry declares, so its position is not load-bearing. Note that the
+            # stock lafa dtbo looks different: it contains ONLY lafa and splits it
+            # across two entries (hw-id <0x08 0x09 0x0a 0x10> and
+            # <0x22 0x28 0x18 0x21 0x11 0x19 0x20>, with the latter at index 0 on
+            # the shipping firmware). Here the single overlay from the BSP covers
+            # the whole hw-id range at once.
+            {"name": "lafa-24624-canoe-overlay.dtbo"},
         ],
         "binary_compatible_with": ["alor", "alor-interposer"],
     },
